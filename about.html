@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Hamed Abdulsalam</title>
+<meta name="description" content="A UX researcher and designer working across humanitarian, enterprise, edtech and scientific research platforms, with accessibility as a throughline.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About · Hamed Abdulsalam">
+<meta property="og:description" content="A UX researcher and designer working across humanitarian, enterprise, edtech and scientific research platforms, with accessibility as a throughline.">
+<meta property="og:url" content="https://hamedabdulsalam.com/about.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About · Hamed Abdulsalam">
+<meta name="twitter:description" content="A UX researcher and designer working across humanitarian, enterprise, edtech and scientific research platforms, with accessibility as a throughline.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Tangerine-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="about">
+<script>window.SITE_ROOT = "./";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="hero-intro">
+    <div class="shell">
+      <div class="grid-2 items-center">
+        <div>
+          <p class="kicker">About</p>
+          <h1 class="page-title">A researcher who designs, and a designer who never stops asking "how do we know."</h1>
+        </div>
+        <div class="about-portrait" tabindex="0">
+          <div class="about-portrait-main">
+            <img src="images/hamed-presenting.jpg" alt="Hamed Abdulsalam presenting user research findings" width="1600" height="1200" loading="lazy">
+          </div>
+          <img src="images/hamed-portrait-color.jpg" alt="" class="about-portrait-accent" width="500" height="500" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-border" id="letter">
+    <div class="shell">
+      <div class="scroll-panel">
+        <div class="wax-seal" aria-hidden="true"><span>HA</span></div>
+        <h2 class="scroll-heading">A Letter to My Next Team</h2>
+        <div class="prose">
+          <p>For 7+ years, I've turned research into outcomes organizations can point to: $5M+ in business value, 10M+ users reached, and a 2,000+ staff HR platform made accessible. I've done this across a humanitarian charity, an HR system, an ed-tech startup, a fintech company, and now NSF-funded science gateways at SGX3, while pursuing a PhD in Technology at Purdue. Different stakes, same method: find out what's true before deciding what to build.</p>
+          <p>What I bring isn't just research, it's discipline: I hold accessibility to the same bar as usability, and increasingly, I build the solution myself, using AI tools like ChatGPT and Claude to ship real things instead of only writing specs.</p>
+          <p>I lead a 300+ member community at the Charity UX Network and have mentored 200+ designers into their first roles, because impact compounds when it's taught, not just shipped. That's what I want to bring to my next team: someone who raises the bar for the people around them, not just their own output.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-border">
+    <div class="shell">
+      <div class="grid-2">
+        <div>
+          <h2 class="kicker">Education</h2>
+          <div class="mt-3">
+            <div class="tl-item"><div class="when">In progress · expected 2030</div><h3>PhD Candidate, Technology</h3><p>Purdue University</p></div>
+            <div class="tl-item"><div class="when">2023</div><h3>MSc, User Experience Design</h3><p>Birmingham City University</p></div>
+          </div>
+        </div>
+        <div>
+          <h2 class="kicker">Certifications &amp; ongoing learning</h2>
+          <div class="mt-3">
+            <div class="tl-item"><div class="when">2023</div><h3>Accessibility Fundamentals, Digital Accessibility, Disability and Accessibility</h3><p>Microsoft</p></div>
+            <div class="tl-item"><div class="when">2025</div><h3>Design Thinking: The Ultimate Guide</h3><p>Interaction Design Foundation</p></div>
+            <div class="tl-item"><div class="when">2025</div><h3>User Research: Methods and Best Practices</h3><p>Interaction Design Foundation</p></div>
+            <div class="tl-item"><div class="when">2025</div><h3>AI for Designers</h3><p>Interaction Design Foundation</p></div>
+            <div class="tl-item"><div class="when">2025</div><h3>Product Management</h3><p>Pendo x Mind the Product</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-border cta-close">
+    <div class="shell">
+      <h2 class="h-section">Where I am</h2>
+      <p>Based in the USA 🇺🇸. Open to remote work and relocation for the right UX Research or Product Design role.</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:hamedleyesalam@gmail.com">Get in touch</a>
+        <a class="link-arrow" href="resume.html">View résumé <span class="a" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

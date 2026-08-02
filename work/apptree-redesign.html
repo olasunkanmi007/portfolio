@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APPLTree: Redesigning Scheduling Software for Cognitive Accessibility · Hamed Abdulsalam</title>
+<meta name="description" content="A team redesign of APPLTree, a scheduling app used by 500+ people with cognitive impairments, focused on a modern interface, deeper accessibility and guided visual navigation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="APPLTree: Redesigning Scheduling Software for Cognitive Accessibility · Hamed Abdulsalam">
+<meta property="og:description" content="A team redesign of APPLTree, a scheduling app used by 500+ people with cognitive impairments, focused on a modern interface, deeper accessibility and guided visual navigation.">
+<meta property="og:url" content="https://hamedabdulsalam.com/work/apptree-redesign.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APPLTree: Redesigning Scheduling Software for Cognitive Accessibility · Hamed Abdulsalam">
+<meta name="twitter:description" content="A team redesign of APPLTree, a scheduling app used by 500+ people with cognitive impairments, focused on a modern interface, deeper accessibility and guided visual navigation.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="work" class="accent-ochre">
+<script>window.SITE_ROOT = "../";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <div class="shell">
+    <p class="mt-5"><a class="link-arrow" href="../work.html"><span class="a" aria-hidden="true">←</span> All work</a></p>
+  </div>
+
+  <section class="cs-hero">
+    <div class="shell">
+      <div class="cs-hero-grid">
+        <div class="cs-hero-main">
+          <span class="org">NeuroMind · Accessibility / Mobile UX</span>
+          <h1>Redesigning a scheduling app used by 500+ people with cognitive impairments</h1>
+          <p class="dek">A team redesign of APPLTree, a scheduling app for people with cognitive impairments grounded in published academic research, focused on a modern interface, deeper accessibility customisation and guided visual navigation.</p>
+          <div class="cta-row">
+            <a class="btn-pill" href="#redesign">See the redesign <span aria-hidden="true">↓</span></a>
+            <a class="link-arrow" href="https://apps.apple.com/gb/app/appltree/id1301462427" target="_blank" rel="noopener noreferrer">View live app <span class="a" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="item"><div class="k">Role</div><div class="v">Senior Designer &amp; Researcher</div></div>
+          <div class="item"><div class="k">Team</div><div class="v">3-person design &amp; research team</div></div>
+          <div class="item"><div class="k">Basis</div><div class="v">Published academic research, 2020</div></div>
+          <div class="item"><div class="k">Methods</div><div class="v">Research review, iterative hi-fi design, usability testing</div></div>
+        </div>
+      </div>
+
+      <div class="metric-row">
+        <div class="stat"><div class="num">500+</div><div class="label">People with cognitive impairments served</div></div>
+        <div class="stat"><div class="num">5</div><div class="label">Improvements to reduce cognitive load</div></div>
+        <div class="stat"><div class="num">3</div><div class="label">Usability testing participants</div></div>
+      </div>
+    </div>
+    <div class="color-bar"></div>
+  </section>
+
+  <nav class="cs-nav" aria-label="On this page">
+    <div class="shell scroll-x">
+      <a href="#problem">Problem</a>
+      <a href="#role">My role</a>
+      <a href="#foundation">Research foundation</a>
+      <a href="#redesign">Redesign</a>
+      <a href="#limitations">Limitations</a>
+      <a href="#reflection">Reflection</a>
+    </div>
+  </nav>
+
+  <section class="cs-section" id="problem">
+    <div class="shell">
+      <h2>The problem</h2>
+      <div class="prose">
+        <p>APPLTree is scheduling software used by more than 500 people with cognitive impairments, originally designed and studied in the published paper <em>"Designing ApplTree: Usable Scheduling Software for People with Cognitive Impairments"</em> (Jamieson et al., 2020). It worked, and it was built with usability and accessibility in mind from the start.</p>
+        <p>But design conventions and accessibility expectations move on, and a live app with hundreds of real users doesn't get to stay static. Reviewing the original research and interface, the gap wasn't in intent, it was in execution: a visual language that had aged, accessibility settings that stopped short of real customisation, and navigation that leaned on text and reading rather than recognition, exactly the kind of friction a cognitive-impairment-focused tool can least afford.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="role">
+    <div class="shell">
+      <h2>My role</h2>
+      <div class="prose">
+        <p>I served as Senior Designer and Researcher within a three-person team, leading the research review and design direction for APPLTree's redesign. I set the direction for identifying where the existing interface fell short, then guided the team through rebuilding both of APPLTree's interface modes end-to-end in high fidelity, including planning and running usability testing within the constraints we had.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="foundation">
+    <div class="shell">
+      <h2>Grounding the redesign in real research</h2>
+      <div class="prose">
+        <p>Rather than redesigning on instinct, I reviewed the original research paper and existing interface and identified five specific areas with room to improve:</p>
+        <ul>
+          <li><strong>User interface limitations</strong> — The original design was functional but dated; a more refined interface could reduce cognitive load and improve engagement.</li>
+          <li><strong>Accessibility challenges</strong> — Room to go further on colour contrast adjustments and customisable font sizes.</li>
+          <li><strong>Icon-based navigation</strong> — Replacing reliance on text menus with icons and symbols for key actions, reducing reliance on reading.</li>
+          <li><strong>Navigation &amp; usability</strong> — Simplifying interactions so scheduling tasks are quicker and easier for users who may struggle with complex navigation structures.</li>
+          <li><strong>Guided navigation with visual hints</strong> — Small animations and subtle glow effects to highlight the next step, keeping users on track without feeling overwhelmed.</li>
+        </ul>
+        <p>Research paper: <a href="https://www.researchgate.net/publication/342754482_Designing_ApplTree_usable_scheduling_software_for_people_with_cognitive_impairments" target="_blank" rel="noopener noreferrer">Jamieson, Cullen, Lennon, Brewster &amp; Evans, "Designing ApplTree: Usable Scheduling Software for People with Cognitive Impairments," Disability and Rehabilitation: Assistive Technology, 17(3), 2020</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="redesign">
+    <div class="shell">
+      <h2>Redesign</h2>
+      <div class="prose">
+        <p>APPLTree offered two interface modes so users could pick what worked for them: a Broad/Shallow layout with everything on one long page, and a Narrow/Deep layout that breaks tasks into steps to reduce cognitive load. Both needed their own redesign.</p>
+        <h3>Before: two interface modes</h3>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Broad/Shallow, original</div>
+          <figure class="cs-figure"><img src="../images/apptree-original-broad-shallow.jpg" width="1520" height="1790" alt="Original APPLTree Broad/Shallow interface, a single long page combining icon shortcuts and a full appointment form." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Narrow/Deep, original</div>
+          <figure class="cs-figure"><img src="../images/apptree-original-narrow-deep.jpg" width="1470" height="1740" alt="Original APPLTree Narrow/Deep interface, breaking the appointment form into separate steps for name, date, time, duration and notes." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="prose">
+        <h3>After: redesigned for clarity and accessibility</h3>
+        <p>The redesign introduced a consistent dark-green brand identity, a dedicated accessibility settings screen for font and colour customisation, and icon-led navigation across both interface modes.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Narrow/Deep, redesigned</div>
+          <figure class="cs-figure"><img src="../images/apptree-improved-narrow-deep-1.jpg" width="1800" height="2332" alt="Redesigned APPLTree Narrow/Deep flow: launch screen, login and sign up, and a new accessibility settings screen for font type and colour customisation." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Narrow/Deep, continued</div>
+          <figure class="cs-figure"><img src="../images/apptree-improved-narrow-deep-2.jpg" width="900" height="3995" alt="Redesigned APPLTree Narrow/Deep appointment flow, broken into icon-led steps for date, time, duration, notification and notes." loading="lazy"></figure>
+        </div>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/apptree-improved-broad-shallow.jpg" width="1400" height="3516" alt="Redesigned APPLTree Broad/Shallow interface with icon-based homepage navigation and an accordion-style appointment form." loading="lazy">
+        <figcaption>The redesigned Broad/Shallow interface, keeping everything on one page while adding icon-led navigation and clearer structure.</figcaption>
+      </figure>
+      <figure class="cs-figure">
+        <img src="../images/apptree-figma-canvas.jpg" width="2000" height="1196" alt="Figma workspace showing the full APPLTree redesign: colour palettes, homepage frames, and every screen in the Narrow/Deep and Broad/Shallow flows." loading="lazy">
+        <figcaption>The full high-fidelity Figma file, covering both interface modes and the accessibility colour system.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="limitations">
+    <div class="shell">
+      <h2>Usability testing</h2>
+      <div class="prose">
+        <p>The redesigned interface was tested with 3 users. That number was capped by policy constraints on recruiting people with cognitive impairments for research, the same barrier the original research paper identified, not by choice. Getting access to this population at all took real effort from the team.</p>
+        <p>It's still worth naming as a limitation rather than glossing over it: three users is enough to catch obvious friction, not enough to validate a redesign with the confidence a population of 500+ people deserves. The testing we ran shaped real decisions in the redesign, it just doesn't stand in for testing at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="lessons">
+    <div class="shell">
+      <h2>Lessons &amp; recommendations</h2>
+      <div class="prose">
+        <ul>
+          <li><strong>Understanding user needs is critical.</strong> Thorough research and involving users with cognitive challenges in the design process surfaces pain points that aren't obvious from the outside.</li>
+          <li><strong>Iterative design leads to better usability.</strong> Refining the interface in cycles, rather than shipping one pass, kept it closer to what users actually need.</li>
+          <li><strong>Accessibility is an ongoing process.</strong> Real improvements were made, but accessibility requires continuous effort as standards and user feedback evolve.</li>
+        </ul>
+        <p>Looking ahead, I'd prioritise: working within the team's existing access to grow the testing cohort past 3 participants, so validation better reflects the 500+ people who rely on the app day to day; exploring AI-driven personalisation that adapts the interface to individual user behaviour; and expanding cross-platform compatibility so the app works consistently across more devices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="reflection">
+    <div class="shell">
+      <h2>Reflection</h2>
+      <blockquote class="pull">
+        Leading research and design for a tool used by 500+ people with cognitive impairments, on a testing budget of 3 users, taught me to be honest about what a small sample can and can't tell you. A more accessible-looking interface isn't the same thing as a more accessible one until enough real users have used it.
+        <cite>If I revisited one decision, it would be pushing earlier, before the redesign was locked, for a larger testing cohort within the same policy constraints. Three users told the team where the obvious friction was; validating a redesign for 500+ people meant we needed more voices in the room, even a handful more would have changed how confidently we could stand behind it.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="next-cs">
+      <a class="link-arrow" href="trading-platform.html">Next: An inclusive trading platform <span class="a" aria-hidden="true">→</span></a>
+      <a class="link-arrow" href="../work.html">All work</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/site.js"></script>
+</body>
+</html>

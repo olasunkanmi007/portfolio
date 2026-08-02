@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oxfam GB: Reason for Donation Research · Hamed Abdulsalam</title>
+<meta name="description" content="How research-led redesign raised Oxfam GB's donation form completion from 18% to 72%, and the hypothesis-driven investigation that caught a post-launch drop in legacy and in-memory donations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oxfam GB: Reason for Donation Research · Hamed Abdulsalam">
+<meta property="og:description" content="How research-led redesign raised Oxfam GB's donation form completion from 18% to 72%, and the hypothesis-driven investigation that caught a post-launch drop in legacy and in-memory donations.">
+<meta property="og:url" content="https://hamedabdulsalam.com/work/oxfam-donation-flow.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oxfam GB: Reason for Donation Research · Hamed Abdulsalam">
+<meta name="twitter:description" content="How research-led redesign raised Oxfam GB's donation form completion from 18% to 72%, and the hypothesis-driven investigation that caught a post-launch drop in legacy and in-memory donations.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="work" class="accent-rust">
+<script>window.SITE_ROOT = "../";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <div class="shell">
+    <p class="mt-5"><a class="link-arrow" href="../work.html"><span class="a" aria-hidden="true">←</span> All work</a></p>
+  </div>
+
+  <section class="cs-hero">
+    <div class="shell">
+      <div class="cs-hero-grid">
+        <div class="cs-hero-main">
+          <span class="org">Oxfam GB · Nonprofit / Fundraising</span>
+          <h1>Raising donation form completion from 18% to 72%</h1>
+          <p class="dek">A research-led redesign of Oxfam GB's donation form, and the hypothesis-driven investigation that caught a silent drop in legacy and in-memory donations after launch, before it caused lasting damage.</p>
+          <div class="cta-row">
+            <a class="btn-pill" href="#impact">See the impact <span aria-hidden="true">↓</span></a>
+            <a class="link-arrow" href="https://www.oxfam.org.uk/_donate/?amount=50.00&amp;frequency=single&amp;campaign=222" target="_blank" rel="noopener noreferrer">View live project <span class="a" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="item"><div class="k">Role</div><div class="v">Lead User Research &amp; Designer</div></div>
+          <div class="item"><div class="k">Stakeholders</div><div class="v">Oxfam Legacies, Fundraising, Donation Team, External Stakeholder (Torchbox)</div></div>
+          <div class="item"><div class="k">Timeline</div><div class="v">3 months</div></div>
+          <div class="item"><div class="k">Methods</div><div class="v">Usability testing, heatmap analysis, hypothesis testing</div></div>
+        </div>
+      </div>
+
+      <div class="metric-row">
+        <div class="stat"><div class="num">18%→72%</div><div class="label">Donation form completion rate</div></div>
+        <div class="stat"><div class="num">20%→70%</div><div class="label">User satisfaction score</div></div>
+        <div class="stat"><div class="num">9/10</div><div class="label">Donors preferred the redesign</div></div>
+        <div class="stat"><div class="num">£1M+</div><div class="label">Raised, in-memory &amp; legacy donations</div></div>
+      </div>
+    </div>
+    <div class="color-bar"></div>
+  </section>
+
+  <nav class="cs-nav" aria-label="On this page">
+    <div class="shell scroll-x">
+      <a href="#problem">Problem</a>
+      <a href="#role">My role</a>
+      <a href="#research">Research</a>
+      <a href="#testing">Testing</a>
+      <a href="#regression">The regression</a>
+      <a href="#redesign">Redesign</a>
+      <a href="#impact">Impact</a>
+      <a href="#reflection">Reflection</a>
+    </div>
+  </nav>
+
+  <section class="cs-section" id="problem">
+    <div class="shell">
+      <h2>The problem</h2>
+      <div class="prose">
+        <p>Oxfam GB's donation form didn't clearly distinguish between the different reasons someone might be giving: a personal donation, a gift In Memoriam of someone who had died, or a contribution from an Executor settling a legacy. Without clear categorisation, the Oxfam Legacies team couldn't reliably track which donations were which, respond to supporters appropriately, or keep accurate audit records.</p>
+        <p>The Insight team's quantitative and qualitative data confirmed just how far this had gone: almost 100% of donations were being recorded as personal donations, with virtually no in-memory, legacy or fundraising donations coming through at all. That wasn't because those donors had stopped giving, it was because they couldn't see themselves reflected in the form, and dropped off rather than force their donation into a category that didn't fit.</p>
+        <p>Fixing that classification problem meant redesigning a form used by a huge volume of donors, without disrupting the giving experience for any of them.</p>
+        <p>Below is what that form looked like before the redesign: a screenshot of the live "Reason for donating" step, followed by a short recording of how donors actually moved through it.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Before redesign</div>
+          <figure class="cs-figure"><img src="../images/oxfam-donation-initial-design.jpg" width="1705" height="1171" alt="Original Oxfam donation form before redesign, showing separate checkboxes under 'More donation options' for donating on behalf of an organisation, in memory of someone special, or as an executor of a will." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Walkthrough</div>
+          <figure class="cs-figure">
+            <video controls preload="metadata" width="1696" height="976" poster="../images/oxfam-donation-initial-prototype-poster.jpg" aria-label="Screen recording of a donor navigating the original donation form's reason-for-donating step">
+              <source src="../videos/oxfam-donation-initial-prototype.webm" type="video/webm">
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="role">
+    <div class="shell">
+      <h2>My role</h2>
+      <div class="prose">
+        <p>I led user research and design end-to-end: defining the problem through personas and competitor analysis, testing prototype directions with real donors, and, after launch surfaced an unexpected regression, running a second, hypothesis-driven investigation to find and fix the root cause.</p>
+        <p>Alongside the research and design work, I managed both internal and external stakeholders, keeping the Legacies team, developers and Torchbox aligned on the same goal throughout, and stayed close to impact metrics after each release to catch implementation issues early rather than after they'd compounded.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="research">
+    <div class="shell">
+      <h2>Research &amp; discovery</h2>
+      <div class="prose">
+        <p>I started by building personas and scenarios to ground the redesign in specific user needs, rather than assumptions about how donors think about "reason for giving." Three scenarios shaped the brief:</p>
+        <ul>
+          <li><strong>Sarah</strong>, a long-time supporter considering a gift in her will or an event with proceeds going to Oxfam, had no way of knowing whether either fit under "Personal Donation" or "Third-Party Donation," the only two categories the original form offered.</li>
+          <li><strong>Sarah</strong>, again, this time through an accessibility lens: as a dyslexic donor, she found the donation page's all-uppercase headings hard to parse, which slowed her down and added friction to a task that should have taken seconds.</li>
+          <li><strong>Garry</strong>, a fundraiser who'd collected donations from his network, paid the funds in through Oxfam's general donation page rather than a dedicated fundraising route, so Oxfam had no way to trace the money back to his campaign.</li>
+        </ul>
+        <p>I also ran a competitor analysis across major UK charities, Red Cross, Crisis, UNICEF, Scope, Great Ormond Street Hospital and British Heart Foundation, to see how established organisations handled donation-reason categorisation, and where their interfaces still fell short.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Research scenarios</div>
+          <figure class="cs-figure"><img src="../images/oxfam-scenarios-personas.jpg" width="2000" height="1413" alt="Three research scenarios: Sarah unsure how to categorise a gift in her will, Sarah struggling with all-uppercase headings as a dyslexic donor, and Garry's fundraising donation getting misallocated on the general donation page." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Competitor analysis</div>
+          <figure class="cs-figure"><img src="../images/oxfam-competitor-analysis.jpg" width="2000" height="2449" alt="Competitor analysis of donation-reason interfaces from Great Ormond Street Hospital, British Heart Foundation, Scope, Crisis and other UK charities." loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="testing">
+    <div class="shell">
+      <h2>Prototyping &amp; usability testing</h2>
+      <div class="prose">
+        <p>Based on that research, I built two prototype variants in Figma and tested both against the original design with 10 participants through the ASKABLE platform in moderated sessions. Prototype A asked a simple yes/no question, "Is this a personal donation from you?", then revealed on behalf of an organisation, in memory of someone special, proceeds from an event, fundraising and legacy (gift in Will) as distinct options. Prototype B grouped those same reasons under a single "Third-Party Donation" category instead.</p>
+        <p>The result was decisive: 9 out of 10 participants preferred Prototype A, citing its intuitive, straightforward interface. We moved forward with it.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Prototype A</div>
+          <figure class="cs-figure"><img src="../images/oxfam-prototype-a.jpg" width="1400" height="3751" alt="Prototype A: a yes/no question asking if the donation is personal, revealing separate options for organisation, in memory, event proceeds, fundraising and legacy gifts, with a detailed legacy sub-form." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Prototype B</div>
+          <figure class="cs-figure"><img src="../images/oxfam-prototype-b.jpg" width="1400" height="2247" alt="Prototype B: a personal gift versus third-party donation choice, grouping organisation, event proceeds and legacy gifts under a single third-party category." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="prose">
+        <p>Participants were screened and recruited through ASKABLE, filtered down to people who were already regular Oxfam donors, then run through live moderated sessions where I watched them navigate both prototypes and talked through their reasoning as they went.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Screening responses</div>
+          <figure class="cs-figure"><img src="../images/oxfam-askable-screening.jpg" width="1909" height="1036" alt="ASKABLE screening responses for Oxfam Donors, showing recruited participants' answers on charity awareness, recent donations and prior Oxfam giving." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Participant list</div>
+          <figure class="cs-figure"><img src="../images/oxfam-askable-participants.jpg" width="1700" height="806" alt="ASKABLE participant list showing session status, ratings and scheduling, with participant names redacted for privacy." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/oxfam-usability-session-1.jpg" width="2000" height="1005" alt="A moderated usability testing session over video call, walking a participant through the redesigned donation options." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/oxfam-usability-session-2.jpg" width="2000" height="1005" alt="A moderated usability testing session over video call, with a participant navigating the Figma prototype live in ASKABLE." loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="regression">
+    <div class="shell">
+      <h2>What the launch broke</h2>
+      <div class="prose">
+        <p>One month after the redesign shipped, the Legacies team reported that in-memory and legacy donations had effectively stopped coming through. A design that had tested well with donors was quietly failing the exact group it was meant to serve better.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/oxfam-legacy-team-report.jpg" width="1269" height="617" alt="Internal email thread flagging that in-memory, website and donations reports had stopped coming through, with names and the internal folder link redacted." loading="lazy">
+        <figcaption>The report that surfaced the problem: legacy and in-memory donation records had gone quiet (names and internal links redacted).</figcaption>
+      </figure>
+      <div class="prose">
+        <p>Rather than guess, I framed the problem as a set of testable hypotheses:</p>
+        <ul>
+          <li><strong>H₀</strong> — The form changes, including preselecting "Yes" and hiding memorial donation fields behind an extra step, had no effect on the decline.</li>
+          <li><strong>H₁</strong> — Preselecting "Yes" specifically caused the decline in In Memoriam donations.</li>
+          <li><strong>H₂</strong> — Making all donation types visible upfront would improve In Memoriam donations by increasing their visibility.</li>
+        </ul>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/oxfam-hypothesis-preselected.jpg" width="2000" height="1771" alt="Annotated screenshot of the donation form, highlighting the 'Yes' option preselected on the personal donation question, with 'Preselected' labelled next to it." loading="lazy">
+        <figcaption>The change under investigation: "Yes" was preselected by default, leaving nothing for donors to interact with.</figcaption>
+      </figure>
+      <div class="prose">
+        <p>To validate, I reviewed over 20 Hotjar heatmap recordings of real donor sessions. The pattern was clear: because "Yes" was preselected, there was nothing left for users to interact with, so they never engaged with the component that would have flagged their donation as In Memoriam or legacy.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Hotjar recording</div>
+          <figure class="cs-figure">
+            <video controls preload="metadata" width="2054" height="942" poster="../images/oxfam-hotjar-heatmap-1-poster.jpg" aria-label="Hotjar session recording, desktop, showing a donor's masked interaction with the preselected Yes/No donation question">
+              <source src="../videos/oxfam-hotjar-heatmap-1.webm" type="video/webm">
+            </video>
+          </figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Hotjar recording</div>
+          <figure class="cs-figure">
+            <video controls preload="metadata" width="464" height="798" poster="../images/oxfam-hotjar-heatmap-2-poster.jpg" aria-label="Hotjar session recording, mobile, showing a donor's masked interaction with the preselected Yes/No donation question">
+              <source src="../videos/oxfam-hotjar-heatmap-2.webm" type="video/webm">
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="redesign">
+    <div class="shell">
+      <h2>Redesigning around the real problem</h2>
+      <div class="prose">
+        <p>The fix wasn't to revert the redesign, it was to reintroduce an interactive step without bringing back the friction the original redesign had removed. I designed a version that made donation-type selection an active choice again, while keeping the flow frictionless for the majority of donors giving for themselves.</p>
+        <h3>From a broken toggle to a real choice</h3>
+        <p>The preselected Yes/No toggle was replaced with a "Reason for donating" dropdown, defaulted to an unselected prompt rather than an answer. Donors now had to make an active choice, and every donation type, including on behalf of an organisation, in memory of someone special, and legacy gifts, was equally visible as an option rather than hidden behind a "No."</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Before vs. after</div>
+          <figure class="cs-figure"><img src="../images/oxfam-improved-design-compare.jpg" width="2000" height="1219" alt="Comparison of the implemented interface, a preselected Yes/No toggle, against the improved interface, an unselected 'Reason for donating' dropdown." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">The rebuilt flow</div>
+          <figure class="cs-figure"><img src="../images/oxfam-improved-design-screens.jpg" width="1600" height="2658" alt="The improved donation form with the 'Reason for donating' dropdown open, listing personal gift, on behalf of an organisation, paying in fundraising, in memory of someone special, and legacy options." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="prose">
+        <p>I extended the same pattern across the rest of the flow: a distinct path for donors giving through fundraising, a dedicated "in memory of someone special" selection with its own sub-form, and a clear inline error prompt when no donation reason was selected at all.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Fundraising path</div>
+          <figure class="cs-figure"><img src="../images/oxfam-redesign-hifi-2.jpg" width="1400" height="601" alt="Redesigned form with 'Paying in Fundraising' selected, showing a dedicated 'Pay in your fundraising' call to action." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">All options visible</div>
+          <figure class="cs-figure"><img src="../images/oxfam-redesign-hifi-1.jpg" width="1400" height="1258" alt="Redesigned dropdown open, listing personal gift, on behalf of an organisation, paying in fundraising, in memory of someone special, and legacy as equally visible options." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">In memory of someone special</div>
+          <figure class="cs-figure"><img src="../images/oxfam-redesign-hifi-3.jpg" width="1400" height="1476" alt="Redesigned form with 'In memory of someone special' selected, revealing a sub-form for the deceased's name and relationship, plus an explanation of why Oxfam needs this information." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Validation error</div>
+          <figure class="cs-figure"><img src="../images/oxfam-redesign-hifi-5.jpg" width="1400" height="1254" alt="Redesigned form showing an inline validation error in red, prompting the donor to select a donation option before continuing." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="prose">
+        <p>A donor who skips the question is told so, in text, rather than silently defaulted to "personal."</p>
+      </div>
+
+      <div class="prose">
+        <h3>Retesting with real donors</h3>
+        <p>Because there was no approved research budget for a second moderated round, I tested the revised design with unmoderated usability testing via User Brain, on mobile, with 7 participants. Every participant found the design usable and actively interacted with it to select their donation type, resolving the regression.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Retest cohort</div>
+          <figure class="cs-figure"><img src="../images/oxfam-userbrain-retest.jpg" width="1900" height="1073" alt="User Brain testers list for the Oxfam Donation Page retest, showing 7 of 7 mobile sessions completed, with participant names redacted." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Retest results</div>
+          <figure class="cs-figure"><img src="../images/oxfam-retest-feedback.jpg" width="836" height="615" alt="Retest feedback table: participants rated ease of understanding donation options and clarity of the personal details form mostly 10 out of 10, and all felt confident they were making a personal donation." loading="lazy"></figure>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Handoff to developers</h3>
+        <p>The finalised design was handed off to the development team through Monday.com, with the reasoning behind the change, a full user story and acceptance criteria attached, and a Figma file organised by scenario so engineering could trace every state back to the research that justified it.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Research reasoning</div>
+          <figure class="cs-figure"><img src="../images/oxfam-handoff-1.jpg" width="1077" height="945" alt="Monday.com discussion thread explaining the research reasoning behind replacing the Yes/No checkboxes with a 'Reason for donating' dropdown, with a colleague's name redacted." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">User story &amp; acceptance criteria</div>
+          <figure class="cs-figure"><img src="../images/oxfam-handoff-2.jpg" width="1091" height="989" alt="Monday.com ticket with a full user story and Gherkin-style acceptance criteria for the 'Reason for donation' dropdown, covering every donation type." loading="lazy"></figure>
+        </div>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/oxfam-figma-workspace.jpg" width="1919" height="1158" alt="Figma workspace overview showing the donation UI file organised by scenario, with prototype iterations, persona scenarios, and design variants laid out on the canvas." loading="lazy">
+        <figcaption>The working Figma file: scenarios, iterations and variants, organised for handoff.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="impact">
+    <div class="shell">
+      <h2>Impact</h2>
+      <div class="prose">
+        <p>The redesign, and the fix that followed it, delivered a meaningfully better donation experience without sacrificing the donation types it was built to protect:</p>
+        <ul>
+          <li>Form completion rate rose from 18% to 72%.</li>
+          <li>User satisfaction scores improved from 20% to 70%.</li>
+          <li>In-memory and legacy donations were restored to their pre-redesign levels, raising over £1M in that donation category.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="reflection">
+    <div class="shell">
+      <h2>Reflection</h2>
+      <blockquote class="pull">
+        The biggest lesson wasn't in the redesign, it was in what happened a month after launch. A design can test well with 9 out of 10 users and still quietly break something a usability session was never going to catch, because the people it broke things for weren't in the room.
+        <cite>Since then, I treat post-launch monitoring as part of the research plan, not a fallback for when something goes wrong. I also recommended the team adopt structured A/B testing for future interface changes, a standing feedback loop with the Legacies team, an analytics dashboard to monitor donation patterns, and quarterly research check-ins, so a regression like this gets caught in days, not a month.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="next-cs">
+      <a class="link-arrow" href="outbreak-simulator.html">Next: Interactive Outbreak Simulator usability overhaul <span class="a" aria-hidden="true">→</span></a>
+      <a class="link-arrow" href="../work.html">All work</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/site.js"></script>
+</body>
+</html>

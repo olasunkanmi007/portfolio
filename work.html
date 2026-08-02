@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Hamed Abdulsalam</title>
+<meta name="description" content="Case studies in evidence-based UX research and accessibility-first design across nonprofit, enterprise, edtech and fintech products.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work · Hamed Abdulsalam">
+<meta property="og:description" content="Case studies in evidence-based UX research and accessibility-first design across nonprofit, enterprise, edtech and fintech products.">
+<meta property="og:url" content="https://hamedabdulsalam.com/work.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Work · Hamed Abdulsalam">
+<meta name="twitter:description" content="Case studies in evidence-based UX research and accessibility-first design across nonprofit, enterprise, edtech and fintech products.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="work">
+<script>window.SITE_ROOT = "./";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="hero-intro">
+    <div class="shell">
+      <p class="kicker">Work</p>
+      <h1 class="page-title">Case studies in evidence-based design.</h1>
+      <p class="lede">Nonprofit fundraising, public health, accessibility and fintech: each case study follows the same spine of problem, research, process, accessibility, and the numbers that resulted.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <h2 class="visually-hidden">Case studies</h2>
+      <div class="work-list">
+
+        <a class="work-card accent-rust" href="work/oxfam-donation-flow.html">
+          <div class="thumb"><img src="images/oxfam-donation-flow-1.jpg" alt="Oxfam GB's donation form, showing the reason-for-donating step and payment options" loading="lazy"></div>
+          <div class="info">
+            <span class="org">Oxfam GB · Nonprofit / Fundraising</span>
+            <h3>Reason for donation section redesign</h3>
+            <p class="metric">18% → 72% completion · 20% → 70% satisfaction</p>
+            <p class="desc">A research-led redesign of how Oxfam donors record their reason for giving, and the hypothesis-driven investigation that caught a post-launch drop in legacy and in-memory donations.</p>
+            <p class="cats">Research · Usability testing · Heatmap analysis</p>
+            <span class="link-arrow">Read the case study <span class="a" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="work-card accent-teal" href="work/outbreak-simulator.html">
+          <div class="thumb"><img src="images/outbreak-simulator-thumb.jpg" alt="epiENGAGE Interactive Outbreak Simulator dashboard, showing a county-level case map with a color legend and an epidemic curve chart" loading="lazy"></div>
+          <div class="info">
+            <span class="org">SGX3 (SGCI) · Science gateway / Public health</span>
+            <h3>Interactive Outbreak Simulator usability overhaul</h3>
+            <p class="metric">100+ → 800+ scientists · 1 paper published</p>
+            <p class="desc">A heuristic evaluation, moderated usability testing, and full interface redesign for an NSF-backed epidemic modeling platform.</p>
+            <p class="cats">Heuristic evaluation · Usability testing · Science gateways</p>
+            <span class="link-arrow">Read the case study <span class="a" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="work-card accent-ochre" href="work/apptree-redesign.html">
+          <div class="thumb"><img src="images/apptree-thumb.jpg" alt="Before and after comparison of APPLTree's homepage, from a flat green text menu to a redesigned icon-based grid" loading="lazy"></div>
+          <div class="info">
+            <span class="org">NeuroMind · Accessibility / Mobile UX</span>
+            <h3>APPLTree accessibility redesign</h3>
+            <p class="metric">500+ users served · 2 interface modes</p>
+            <p class="desc">A team redesign of a scheduling app used by 500+ people with cognitive impairments, grounded in published academic research.</p>
+            <p class="cats">Accessibility · Mobile UX · Research-led design</p>
+            <span class="link-arrow">Read the case study <span class="a" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="work-card accent-plum" href="work/trading-platform.html">
+          <div class="thumb"><img src="images/trading-thumb.jpg" alt="A desk setup showing the redesigned trading platform on desktop and mobile, with voice control active" loading="lazy"></div>
+          <div class="info">
+            <span class="org">Birmingham City University · Accessibility / Fintech</span>
+            <h3>An inclusive trading platform</h3>
+            <p class="metric">5 traders tested · SUS score 74.5</p>
+            <p class="desc">An accessibility redesign of a financial market trading platform for traders with disabilities, benchmarked against TradingView and MetaTrader 4, with voice commands, tactile feedback and real-time alerts.</p>
+            <p class="cats">Accessibility · UX research · Usability testing</p>
+            <span class="link-arrow">Read the case study <span class="a" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="plain-card divider">
+        <h3>Currently: SGX3 (SGCI), NSF-funded science gateways</h3>
+        <p>Leading UX research since January 2026, translating complex scientific and computational workflows into accessible tools for researchers worldwide. This work is early, and a full case study will follow as outcomes ship.</p>
+        <p class="mt-2"><a class="link-arrow" href="about.html">Read about current focus <span class="a" aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

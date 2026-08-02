@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Inclusive Trading Platform: Accessible Financial Market UX · Hamed Abdulsalam</title>
+<meta name="description" content="An accessibility redesign of a financial market trading platform, completed at Birmingham City University under Professor Chris Creed, benchmarked against TradingView and MetaTrader 4, with voice commands, tactile feedback and real-time alerts, validated with 5 traders (SUS 74.5).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="An Inclusive Trading Platform: Accessible Financial Market UX · Hamed Abdulsalam">
+<meta property="og:description" content="An accessibility redesign of a financial market trading platform, completed at Birmingham City University under Professor Chris Creed, benchmarked against TradingView and MetaTrader 4, with voice commands, tactile feedback and real-time alerts, validated with 5 traders (SUS 74.5).">
+<meta property="og:url" content="https://hamedabdulsalam.com/work/trading-platform.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="An Inclusive Trading Platform: Accessible Financial Market UX · Hamed Abdulsalam">
+<meta name="twitter:description" content="An accessibility redesign of a financial market trading platform, completed at Birmingham City University under Professor Chris Creed, benchmarked against TradingView and MetaTrader 4, with voice commands, tactile feedback and real-time alerts, validated with 5 traders (SUS 74.5).">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="work" class="accent-plum">
+<script>window.SITE_ROOT = "../";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <div class="shell">
+    <p class="mt-5"><a class="link-arrow" href="../work.html"><span class="a" aria-hidden="true">←</span> All work</a></p>
+  </div>
+
+  <section class="cs-hero">
+    <div class="shell">
+      <div class="cs-hero-grid">
+        <div class="cs-hero-main">
+          <span class="org">Birmingham City University · Accessibility / Fintech</span>
+          <h1>Designing an inclusive trading platform for a $7.5T market</h1>
+          <p class="dek">An accessibility redesign completed at Birmingham City University under Professor Chris Creed, benchmarked against TradingView and MetaTrader 4, adding voice commands, tactile feedback and real-time alerts so traders with disabilities aren't locked out of a market that never closes.</p>
+          <div class="cta-row"><a class="btn-pill" href="#evaluation">See the evaluation <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <div class="meta-card">
+          <div class="item"><div class="k">Role</div><div class="v">Product Designer &amp; UX Researcher</div></div>
+          <div class="item"><div class="k">Supervisor</div><div class="v"><a href="https://www.bcu.ac.uk/subject-areas/computing/staff/chris-creed" target="_blank" rel="noopener noreferrer">Prof. Chris Creed</a></div></div>
+          <div class="item"><div class="k">Scope</div><div class="v">Desktop &amp; mobile, WCAG-aligned</div></div>
+          <div class="item"><div class="k">Methods</div><div class="v">Personas, competitor analysis, think-aloud testing</div></div>
+        </div>
+      </div>
+
+      <div class="metric-row">
+        <div class="stat"><div class="num">5</div><div class="label">Traders in usability testing</div></div>
+        <div class="stat"><div class="num">74.5</div><div class="label">System Usability Scale score</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Disability-focused personas</div></div>
+        <div class="stat"><div class="num">In development</div><div class="label">Prototype stage, not yet shipped</div></div>
+      </div>
+    </div>
+    <div class="color-bar"></div>
+  </section>
+
+  <nav class="cs-nav" aria-label="On this page">
+    <div class="shell scroll-x">
+      <a href="#problem">Problem</a>
+      <a href="#role">My role</a>
+      <a href="#research">Research</a>
+      <a href="#system">Design system</a>
+      <a href="#redesign">Redesign</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#reflection">Reflection</a>
+    </div>
+  </nav>
+
+  <section class="cs-section" id="problem">
+    <div class="shell">
+      <h2>The problem</h2>
+      <div class="prose">
+        <p>The global financial market moves $7.5 trillion a day, involving banks, institutions and individual traders. But the platforms that market runs on weren't built with accessibility in mind. Auditing TradingView and MetaTrader 4, the two platforms most traders actually use, turned up the same failures on both: only a mouse works, keyboards can't navigate the platform at all; there's no voice-to-speech support; news alerts show up as an unlabelled clickable icon instead of a real notification; and neither offers a way to auto-calculate lot sizes, collaborate on analysis, or otherwise reduce the manual load on a trader's attention.</p>
+        <p>For a deaf trader, a trader with glaucoma, a trader who lost both arms, or a trader managing executive-functioning challenges, none of that is a minor inconvenience, it's the difference between being able to trade at all.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="role">
+    <div class="shell">
+      <h2>My role</h2>
+      <div class="prose">
+        <p>I led this end to end as a product design and UX research project at Birmingham City University, supervised by <a href="https://www.bcu.ac.uk/subject-areas/computing/staff/chris-creed" target="_blank" rel="noopener noreferrer">Professor Chris Creed</a>, whose own research focus on assistive technology for disabled people shaped the rigor this project was held to: auditing existing platforms, building personas and scenarios around real disability-specific trading needs, designing a WCAG-aligned system and high-fidelity prototype, and evaluating it with real traders through moderated usability testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="research">
+    <div class="shell">
+      <h2>Research</h2>
+      <div class="prose">
+        <p>To ground the redesign in real needs rather than assumptions, I developed four personas, each representing a different disability and a genuinely different relationship to trading:</p>
+        <ul>
+          <li><strong>Queen Peters</strong> — born deaf, an experienced trader who misses 60% of trade-relevant news and price events because they arrive as sound-based alerts she can't hear.</li>
+          <li><strong>Sarah Ruben</strong> — lives with executive-functioning challenges that make it hard to stay organised, track trades, or remember to set stop-loss and take-profit levels.</li>
+          <li><strong>Abdullah Saraf</strong> — a mechanical engineer who lost both arms in a car accident, needing customisable hotkeys and voice-activated, hands-free trading.</li>
+          <li><strong>Kala Andrew</strong> — a trader with glaucoma, needing text-to-speech, alt text, high-contrast themes and full keyboard shortcuts to keep trading as his vision changed.</li>
+        </ul>
+        <p>Five scenarios followed from these personas, mapping specific trading routines, like Queen teaching other traders around her missed alerts, or Kala trading intraday sessions with a higher-contrast, larger-text chart view, onto concrete design requirements.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-personas.jpg" width="2200" height="1630" alt="Four personas: Queen Peters (hearing impaired), Sarah Ruben (cognitive impairment), Abdullah Saraf (physically impaired), and Kala Andrew (visually impaired), each with bio, pain points, goals and assistive technology used." loading="lazy">
+        <figcaption>Four personas, one per disability focus, grounding every design decision that followed.</figcaption>
+      </figure>
+      <figure class="cs-figure">
+        <img src="../images/trading-scenarios.jpg" width="2000" height="2140" alt="Five scenarios mapping each persona's real trading routine and disability-specific challenge onto concrete design requirements." loading="lazy">
+        <figcaption>Five scenarios, translating each persona's routine into concrete design requirements.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="system">
+    <div class="shell">
+      <h2>Design system</h2>
+      <div class="prose">
+        <p>Early paper sketches prioritised the left side of the dashboard for core trading tools, based on the finding that users spend roughly 80% of their time viewing the left half of a page and only 20% on the right, with system features placed top, right and bottom where they stay visible without competing for attention.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-sketches.jpg" width="1800" height="2007" alt="Paper wireframe sketches for the trading dashboard, including tablet portrait and landscape layouts with voice control gesture annotations." loading="lazy">
+        <figcaption>Conceptual sketches, annotated against specific WCAG success criteria before any high-fidelity work began.</figcaption>
+      </figure>
+      <div class="prose">
+        <p>The visual system runs in both dark and light modes with colour codes tuned to meet WCAG 1.4.3 contrast requirements, set in Montserrat, a sans-serif chosen specifically for its legibility on screen for users with visual impairments.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-design-system.jpg" width="2000" height="2036" alt="Trading platform colour system with WCAG 1.4.3-compliant contrast pairs, and Montserrat typography in regular, medium, semi-bold and bold weights." loading="lazy">
+        <figcaption>Colour system and typography, built around WCAG contrast requirements from the start.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="redesign">
+    <div class="shell">
+      <h2>Redesign</h2>
+      <div class="prose">
+        <p>The high-fidelity prototype translated every persona's needs into a real feature, organised around the four disability groups the research was built on.</p>
+        <h3>For visually impaired traders</h3>
+        <p>A dark mode reduces eye strain and light sensitivity for users with glaucoma. Financial data is represented with patterns as well as colour (WCAG 1.4.1), addressing colour blindness directly. Charts can be zoomed up to 500% without losing content or functionality (WCAG 1.4.4), and non-text elements like icons are built to WCAG 1.1.1 so they're comprehensible to assistive technology.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-features-visual.jpg" width="1100" height="3773" alt="Accessibility features for visually impaired traders: dark mode toggle, colour-blind-safe candlestick patterns, 500% zoom, and non-textual icon support." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>For physically impaired traders</h3>
+        <p>A voice recognition system lets a trader without arms select tools and execute trades hands-free, using commands like "Select" and "Trend Line." Focus Order (WCAG 2.4.7) and Focus Visible (WCAG 2.4.3) keep keyboard and screen-reader users aware of exactly where they are on the page, and WCAG 2.1.2 guarantees no keyboard trap, any modal a user gets stuck in can be escaped with a single "Esc" press.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-features-physical.jpg" width="1100" height="3137" alt="Accessibility features for physically impaired traders: voice recognition system, focus order and focus-visible states, and keyboard escape from modal traps." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>For traders with cognitive impairments</h3>
+        <p>An order checklist acts as an external memory aid for confirming trade rules before execution, and a sticky-notes tool lets traders document study guides and trade processes they can refer back to, both aimed squarely at the executive-functioning challenges Sarah's persona surfaced.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-features-cognitive.jpg" width="1800" height="2291" alt="Accessibility features for traders with cognitive impairments: an order checklist for trade rules, and a sticky-notes tool for study guides and trade processes." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>For traders with auditory impairments</h3>
+        <p>Speech-to-text was built into the platform's call feature, so a deaf trader can read a live conversation in real time instead of relying on lip-reading. Critical alerts, like a major economic release or a price hitting a key level, also trigger haptic vibration on an Apple Watch, so time-sensitive information doesn't depend on hearing a sound at all.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-features-auditory.jpg" width="1800" height="2315" alt="Accessibility features for traders with auditory impairments: real-time speech-to-text on calls, and Apple Watch haptic alerts for trading events." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>Across desktop and mobile</h3>
+        <p>Every touch target meets a 44x44px minimum (WCAG 2.5.5), text and icons resize without losing functionality (WCAG 1.4.10), and the mobile app layers in standard gestures, shake to screenshot a chart, pinch to zoom, rotate to switch orientation, so the platform holds up outside the desktop.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-mobile.jpg" width="1300" height="2673" alt="Multi-platform accessibility: 44x44px touch targets, resizable text and icons, and the mobile app showing voice control and order checklist features." loading="lazy">
+      </figure>
+      <figure class="cs-figure">
+        <img src="../images/trading-all-screens.jpg" width="900" height="2851" alt="Overview grid of every desktop screen state in the redesigned trading platform, across light mode, dark mode and every accessibility feature." loading="lazy">
+        <figcaption>Every screen state in the redesigned platform, light and dark mode included.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="evaluation">
+    <div class="shell">
+      <h2>Evaluation</h2>
+      <div class="prose">
+        <p>I tested the prototype using a think-aloud cognitive technique with 5 traders (2 women, 3 men), conducted over Zoom since gathering financial traders in person wasn't practical. Each trader worked through 5 tasks: switching from light to dark mode, locating and using zoom in/out, placing a trade order and checking it against the trade checklist, locating and using voice control, and locating and using the call feature.</p>
+        <p>Task completion times were logged and analysed in SPSS across all 5 participants and tasks. After completion, each trader filled out a System Usability Scale survey, returning an average score of <strong>74.5</strong>, meaning the platform was perceived as usable and intuitive, with room to grow rather than a finished product.</p>
+        <p>Feedback was genuinely mixed. Traders liked how familiar the platform felt next to tools they already used, appreciated not needing a separate calculator for risk, and responded well to the checklist. The clearest criticism was that the voice-control icon, a speaker, was easy to mistake for something else; testers said a microphone would read more clearly. Some also noted the prototype wasn't fully built out, which limited how confidently they could judge it.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-evaluation.jpg" width="1300" height="3725" alt="Evaluation methodology and results: five-task moderated test protocol, survey responses, per-participant task-completion times, and System Usability Scale results averaging 74.5." loading="lazy">
+        <figcaption>Task times, SUS scores and qualitative survey results from testing with 5 traders.</figcaption>
+      </figure>
+      <div class="prose">
+        <h3>Iterating on the feedback</h3>
+        <p>The clearest actionable finding, the voice-control icon reading unclear, went straight into the design: the speaker icon was replaced with a microphone icon, a small change that directly answers what testers actually said rather than what I assumed they'd understand.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/trading-iteration.jpg" width="1800" height="1264" alt="Before and after of the voice command icon, changed from a speaker icon to a microphone icon based on usability testing feedback." loading="lazy">
+        <figcaption>The voice-control icon, before and after: speaker to microphone, based directly on tester feedback.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="reflection">
+    <div class="shell">
+      <h2>Reflection</h2>
+      <blockquote class="pull">
+        Designing for four different disabilities at once means there's no single "the user" to hold in your head, a feature that helps Kala can be invisible to Abdullah, and a fix for Queen doesn't touch Sarah's problem at all. The checklist that made Sarah's workflow easier is a good example: it's genuinely useful, but it also risks reading as patronising to someone who doesn't see themselves as needing one.
+        <cite>A SUS score of 74.5 is a solid result, not a finished one. If I extended this project, I'd want a second testing round with a larger, disability-matched sample, testers who actually share the impairments the personas were built around, rather than five general traders, since that's the gap between a usable prototype and one that's actually validated for the people it's meant to serve.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="next-cs">
+      <a class="link-arrow" href="../work.html">Back to all work <span class="a" aria-hidden="true">→</span></a>
+      <a class="link-arrow" href="../about.html">About</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/site.js"></script>
+</body>
+</html>

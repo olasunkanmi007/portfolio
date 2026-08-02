@@ -1,0 +1,11 @@
+.vercel
+.DS_Store
+.claude/
+*.pdf
+*.HEIC
+*.heic
+Hamed.png
+Hero images/
+Leadeship/
+POrtfolio files/
+contact.html

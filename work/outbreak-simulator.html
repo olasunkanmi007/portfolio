@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>epiENGAGE: Interactive Outbreak Simulator Usability Overhaul · Hamed Abdulsalam</title>
+<meta name="description" content="A heuristic evaluation, moderated usability testing, and full interface redesign for the Interactive Outbreak Simulator, an NSF-backed epidemic modeling platform used by 100+ scientists.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="epiENGAGE: Interactive Outbreak Simulator Usability Overhaul · Hamed Abdulsalam">
+<meta property="og:description" content="A heuristic evaluation, moderated usability testing, and full interface redesign for the Interactive Outbreak Simulator, an NSF-backed epidemic modeling platform used by 100+ scientists.">
+<meta property="og:url" content="https://hamedabdulsalam.com/work/outbreak-simulator.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="epiENGAGE: Interactive Outbreak Simulator Usability Overhaul · Hamed Abdulsalam">
+<meta name="twitter:description" content="A heuristic evaluation, moderated usability testing, and full interface redesign for the Interactive Outbreak Simulator, an NSF-backed epidemic modeling platform used by 100+ scientists.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="work" class="accent-teal">
+<script>window.SITE_ROOT = "../";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <div class="shell">
+    <p class="mt-5"><a class="link-arrow" href="../work.html"><span class="a" aria-hidden="true">←</span> All work</a></p>
+  </div>
+
+  <section class="cs-hero">
+    <div class="shell">
+      <div class="cs-hero-grid">
+        <div class="cs-hero-main">
+          <span class="org">SGX3 (SGCI) · Science gateway / Public health</span>
+          <h1>Growing an epidemic simulator's users from 100+ to 800+</h1>
+          <p class="dek">A structured usability consulting engagement for the Interactive Outbreak Simulator (epiENGAGE), an NSF-backed epidemic modeling platform: a heuristic evaluation, moderated usability testing, and a full interface redesign.</p>
+          <div class="cta-row">
+            <a class="btn-pill" href="#impact">See the impact <span aria-hidden="true">↓</span></a>
+            <a class="link-arrow" href="https://docs.google.com/presentation/d/1SmFPQJl8pafbZsSnCFd_t3b9aFFvtPPMVAZKTPoV6bE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View full presentation <span class="a" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="item"><div class="k">Role</div><div class="v">Evaluation &amp; Design Lead</div></div>
+          <div class="item"><div class="k">Team</div><div class="v"><a href="https://polytechnic.purdue.edu/profile/parsonsp" target="_blank" rel="noopener noreferrer">Dr. Paul Parsons</a> (Project Lead), Linh Pham (UX Researcher &amp; Designer)</div></div>
+          <div class="item"><div class="k">Timeline</div><div class="v">Feb – May 2026</div></div>
+          <div class="item"><div class="k">Methods</div><div class="v">Heuristic evaluation, moderated usability testing, hi-fi redesign</div></div>
+        </div>
+      </div>
+
+      <div class="metric-row">
+        <div class="stat"><div class="num">100+→800+</div><div class="label">Scientists using the platform</div></div>
+        <div class="stat"><div class="num">2/10→9/10</div><div class="label">Simulations completed</div></div>
+        <div class="stat"><div class="num">1</div><div class="label">Research paper published</div></div>
+        <div class="stat"><div class="num">3</div><div class="label">Milestones delivered</div></div>
+      </div>
+    </div>
+    <div class="color-bar"></div>
+  </section>
+
+  <nav class="cs-nav" aria-label="On this page">
+    <div class="shell scroll-x">
+      <a href="#problem">Problem</a>
+      <a href="#role">My role</a>
+      <a href="#heuristic">Heuristic evaluation</a>
+      <a href="#testing">Usability testing</a>
+      <a href="#redesign">Redesign</a>
+      <a href="#impact">Impact</a>
+      <a href="#reflection">Reflection</a>
+    </div>
+  </nav>
+
+  <section class="cs-section" id="problem">
+    <div class="shell">
+      <h2>The problem</h2>
+      <div class="prose">
+        <p>The Interactive Outbreak Simulator (epiENGAGE) is an NSF-backed epidemic modeling platform used by 100+ scientists to simulate disease spread across US counties and test intervention strategies like school closures and vaccination campaigns.</p>
+        <p>The platform had never been formally evaluated for usability. Inconsistent button styling, parameter fields that could be saved empty, and chart interactions with no discoverable entry point were the kind of friction that gets in the way of a scientist trusting a model's output, not just clicking through its interface.</p>
+        <p>The core simulation flow was the biggest offender. Most users bounced out before finishing a single run, and the drop-off was worst at the step where they had to choose their disease model's parameters and variables: dense, unexplained settings with no indication of what was required before the simulation could even be started. A platform meant to make epidemic modeling accessible to more scientists was, in practice, only usable by the people who already knew how to use it. The Interactive Outbreak Simulator team engaged the SGCI Usability Consulting team to evaluate and enhance the platform's UX, accessibility and overall usability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="role">
+    <div class="shell">
+      <h2>My role</h2>
+      <div class="prose">
+        <p>I served as Evaluation and Design Lead. As a PhD student working under Dr. Paul Parsons, Project Lead and Supervisor, I led day-to-day execution across all three milestones, coordinated the team, and was the primary point of contact with the project team throughout the engagement.</p>
+        <p>I also advised Linh Pham, an undergraduate UX researcher who collaborated closely with me on evaluation planning, project team meetings and design execution, while contributing directly to the UX analysis, research, design and reporting myself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="heuristic">
+    <div class="shell">
+      <h2>Heuristic evaluation</h2>
+      <div class="prose">
+        <p>The first milestone was a structured expert review using Nielsen's 10 Usability Heuristics, conducted without end-user involvement. It let us systematically identify usability issues and establish a clear foundation before we ever put the platform in front of a real scientist. The evaluation surfaced issues across four heuristic categories:</p>
+        <ul>
+          <li><strong>Consistency &amp; standards</strong> — Buttons of equal color but different importance, and inconsistent placement, made it unclear what a scientist was supposed to do next.</li>
+          <li><strong>Error prevention</strong> — Required parameter fields could be saved empty, and the "Reset" button wiped every setting instantly with no warning, despite being a fully destructive, non-reversible action.</li>
+          <li><strong>Error recognition &amp; recovery</strong> — Errors were highlighted in color, but without an explanatory message telling users what was actually wrong.</li>
+          <li><strong>Help &amp; documentation</strong> — Chart interactions that only revealed data on click had no visible affordance, and the workflow never explicitly told users what to do step by step to run a simulation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="testing">
+    <div class="shell">
+      <h2>Usability testing</h2>
+      <div class="prose">
+        <p>The second milestone was moderated usability testing with 10 participants recruited through the Interactive Outbreak Simulator team, designed to surface pain points the heuristic evaluation couldn't catch on its own. Findings clustered into four areas:</p>
+        <ul>
+          <li><strong>Model setup &amp; system understanding</strong> — Participants wanted clearer explanations of how each outbreak model worked, and some didn't realize Disease Parameters and Initial Cases both had to be completed before a simulation could run.</li>
+          <li><strong>Initial case configuration</strong> — Users interpreted "Save" as adding a case and "Add Initial Cases" as adding more, and the grey "Add Initial Cases" button read as disabled, leaving them unsure whether anything had actually happened.</li>
+          <li><strong>Visualization clarity</strong> — Participants asked for clearer legends for color-coded case severity, distinguishable line patterns, and guidance on interactive features like pausing, filtering and navigating the timeline.</li>
+          <li><strong>Help guide visibility</strong> — Most participants never noticed the User Guide when they got stuck, defaulting to trial-and-error instead.</li>
+        </ul>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/outbreak-testing-session-3.jpg" width="2000" height="1163" alt="A moderated usability testing session showing a participant reviewing county-level infection counts for Alabama, with the participant's video feed blurred for privacy." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/outbreak-testing-session-4.jpg" width="2000" height="1253" alt="A moderated usability testing session showing a participant reviewing an Arizona outbreak simulation, with the participant's video feed blurred for privacy." loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="before-after">
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/outbreak-testing-session-5.jpg" width="2000" height="1183" alt="A moderated usability testing session showing a participant setting up a Texas disease model, with the participant's video feed blurred for privacy." loading="lazy"></figure>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label">Moderated session</div>
+          <figure class="cs-figure"><img src="../images/outbreak-testing-session-6.jpg" width="2000" height="1119" alt="A moderated usability testing session showing a participant reviewing a Texas epidemic curve, with the participant's video feed blurred for privacy." loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="redesign">
+    <div class="shell">
+      <h2>Redesign</h2>
+      <div class="prose">
+        <p>The third milestone translated every finding from the heuristic evaluation and usability testing into a high-fidelity prototype, addressing clarity, accessibility and overall usability across the platform.</p>
+        <h3>A sequential, numbered setup flow</h3>
+        <p>The simulation setup panel was restructured with clearly numbered steps, giving users an explicit workflow that was completely absent from the original design.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/outbreak-redesign-setup-flow.jpg" width="2000" height="701" alt="Before and after comparison: the original homepage with no numbered setup steps, versus the redesigned homepage with a numbered 1-2-3 setup flow." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>Empty states that explain themselves</h3>
+        <p>The county map and epidemic curve empty states were updated to show clear placeholder messaging and icons instead of flat text, and the map rendering itself was cleaned up and better positioned within its container.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/outbreak-redesign-empty-states.jpg" width="2000" height="704" alt="Before and after comparison: the original flat 'No Data Available' text labels, versus redesigned icon-based empty states with clear guidance." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>Buttons that say what they do</h3>
+        <p>The "Add Initial Case" button was restyled from grey to blue so it read as an active primary action, Save and Close were repositioned and visually differentiated, and a helper message now tells users a case must be added before they can save.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/outbreak-redesign-buttons.jpg" width="2000" height="703" alt="Before and after comparison: the original grey 'Add Initial Case' button that read as disabled, versus the redesigned blue primary action button with a helper message." loading="lazy">
+      </figure>
+      <div class="prose">
+        <h3>Legends that explain the data</h3>
+        <p>The map gained a color legend running from low to high cases, and the epidemic curve's legend moved from a plain line key above the chart to labeled, color-coded category pills below it for Susceptible, Exposed, Infectious and Recovered.</p>
+      </div>
+      <figure class="cs-figure">
+        <img src="../images/outbreak-redesign-legends.jpg" width="2000" height="750" alt="Before and after comparison: the original map with no color legend, versus the redesigned map with a low-to-high case color legend and labeled epidemic curve category pills." loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-section" id="impact">
+    <div class="shell">
+      <h2>Impact</h2>
+      <div class="prose">
+        <p>Across three milestones, the engagement delivered a full usability foundation for a platform that didn't have one:</p>
+        <ul>
+          <li>A heuristic evaluation across four categories, using Nielsen's 10 Usability Heuristics, formally presented to the platform team.</li>
+          <li>Moderated usability testing with 10 real users, surfacing setup and interaction issues the expert review alone couldn't catch.</li>
+          <li>A high-fidelity redesign addressing every finding, from setup flow to error prevention to chart legends, delivered as a Figma prototype ready for implementation.</li>
+          <li>Scientists using the platform grew from 100+ to 800+, and simulation completion rose from 2 in 10 attempts to 9 in 10.</li>
+          <li>The work fed into a published research paper on the platform.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="reflection">
+    <div class="shell">
+      <h2>Reflection</h2>
+      <blockquote class="pull">
+        Designing for scientists is a different discipline than designing for consumers. The users here didn't need convincing to use the tool, they needed to trust that a button click did what they thought it did, before they read a chart and cited it in their own research.
+        <cite>Advising Linh, an undergraduate researcher, while staying the project team's main point of contact meant carrying two different kinds of communication at once, technical detail in one direction, mentorship in the other. If I revisited one decision, it would be building a standing usability check-in into the platform's roadmap from day one, rather than treating it as a single end-of-engagement deliverable, which is exactly what we ended up recommending to the project team.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="next-cs">
+      <a class="link-arrow" href="apptree-redesign.html">Next: APPLTree accessibility redesign <span class="a" aria-hidden="true">→</span></a>
+      <a class="link-arrow" href="../work.html">All work</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/site.js"></script>
+</body>
+</html>
