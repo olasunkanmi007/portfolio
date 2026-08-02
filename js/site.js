@@ -66,13 +66,17 @@
 
   function mountLetterButton() {
     if (PAGE === "about" || PAGE === "404") return;
+    var region = document.createElement("div");
+    region.setAttribute("role", "complementary");
+    region.setAttribute("aria-label", "Letter to my next team shortcut");
     var a = document.createElement("a");
     a.className = "letter-fab";
     a.href = ROOT + "about.html#letter";
     a.innerHTML =
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>' +
       "<span>A Letter to My Next Team</span>";
-    document.body.appendChild(a);
+    region.appendChild(a);
+    document.body.appendChild(region);
 
     var revealAt = 320;
     function onScroll() {

@@ -34,7 +34,7 @@
 }
 
 :root{
-  --paper:#FCFAF6; --paper-2:#F5F1EA; --ink:#161511; --ink-soft:#54514A; --ink-faint:#95907F;
+  --paper:#FCFAF6; --paper-2:#F5F1EA; --ink:#161511; --ink-soft:#54514A; --ink-faint:#726C58;
   --line:#E9E3D6; --line-strong:#D6CDB8;
   --accent:#8A5D19; --accent-bright:#B9862E;
   --rust:#B5502A; --teal:#2B6B66; --ochre:#8F6817; --plum:#8B3350;
@@ -49,7 +49,7 @@
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --paper:#15130F; --paper-2:#1D1B15; --ink:#F5F1E8; --ink-soft:#ACA79B; --ink-faint:#6E695C;
+    --paper:#15130F; --paper-2:#1D1B15; --ink:#F5F1E8; --ink-soft:#ACA79B; --ink-faint:#8C8674;
     --line:#2E2B22; --line-strong:#403B2E;
     --accent:#D9AC52; --accent-bright:#E8C171;
     --rust:#E08A5C; --teal:#6FB3AC; --ochre:#D9AC52; --plum:#D98BAA;
@@ -58,7 +58,7 @@
   }
 }
 :root[data-theme="dark"]{
-  --paper:#15130F; --paper-2:#1D1B15; --ink:#F5F1E8; --ink-soft:#ACA79B; --ink-faint:#6E695C;
+  --paper:#15130F; --paper-2:#1D1B15; --ink:#F5F1E8; --ink-soft:#ACA79B; --ink-faint:#8C8674;
   --line:#2E2B22; --line-strong:#403B2E;
   --accent:#D9AC52; --accent-bright:#E8C171;
   --rust:#E08A5C; --teal:#6FB3AC; --ochre:#D9AC52; --plum:#D98BAA;
@@ -66,7 +66,7 @@
   --shadow-color:rgba(0,0,0,.6);
 }
 :root[data-theme="light"]{
-  --paper:#FCFAF6; --paper-2:#F5F1EA; --ink:#161511; --ink-soft:#54514A; --ink-faint:#95907F;
+  --paper:#FCFAF6; --paper-2:#F5F1EA; --ink:#161511; --ink-soft:#54514A; --ink-faint:#726C58;
   --line:#E9E3D6; --line-strong:#D6CDB8;
   --accent:#8A5D19; --accent-bright:#B9862E;
   --rust:#B5502A; --teal:#2B6B66; --ochre:#8F6817; --plum:#8B3350;
@@ -657,7 +657,7 @@ a.plain:hover{ color:var(--accent); }
   background:var(--paper-2); border-radius:var(--radius-lg); box-shadow:var(--shadow);
   padding:28px 30px; display:flex; flex-direction:column; gap:20px;
 }
-.meta-card .item .k{ font-family:var(--font-body); font-size:.74rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--proj, var(--accent)); }
+.meta-card .item .k{ font-family:var(--font-body); font-size:.74rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--proj, var(--accent)) 80%, black 20%); }
 .meta-card .item .v{ font-size:1rem; color:var(--ink); margin-top:5px; }
 .meta-card .item .v a{ color:var(--ink); text-decoration-color:var(--line-strong); }
 .meta-card .item .v a:hover{ text-decoration-color:var(--ink); }
