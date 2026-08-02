@@ -245,6 +245,14 @@ a.plain:hover{ color:var(--accent); }
 }
 .scroll-panel .prose p + p{ margin-top:8px; }
 
+.scroll-signature{
+  margin:30px 0 6px; text-align:right; padding-right:clamp(50px,11vw,110px);
+  font-family:"Tangerine", cursive; font-weight:700; color:#2f2008;
+  font-size:clamp(3.2rem,7vw,4.6rem); line-height:1; letter-spacing:.02em;
+  transform:rotate(-3deg);
+  text-shadow:0 1px 0 rgba(255,255,255,.3);
+}
+
 .scroll-heading{
   position:relative; text-align:center; margin:0 0 22px;
   font-family:"Tangerine", cursive; font-weight:700; color:#4a2e0f;
@@ -257,7 +265,7 @@ a.plain:hover{ color:var(--accent); }
 }
 
 .wax-seal{
-  position:absolute; bottom:-26px; right:clamp(20px,6vw,56px); z-index:2;
+  position:absolute; bottom:clamp(18px,4vw,34px); right:clamp(16px,5vw,54px); z-index:3;
   width:76px; height:76px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
   background:radial-gradient(circle at 32% 28%, #d3452f 0%, #a3241a 55%, #7c1712 100%);
@@ -276,8 +284,9 @@ a.plain:hover{ color:var(--accent); }
   letter-spacing:.04em; color:#f4d9c6; text-shadow:0 1px 1px rgba(0,0,0,.4);
 }
 @media (max-width:640px){
-  .wax-seal{ width:60px; height:60px; bottom:-18px; right:16px; }
-  .wax-seal span{ font-size:.95rem; }
+  .wax-seal{ width:56px; height:56px; bottom:10px; right:10px; }
+  .wax-seal span{ font-size:.85rem; }
+  .scroll-signature{ padding-right:20px; }
 }
 #letter{ scroll-margin-top:96px; }
 
