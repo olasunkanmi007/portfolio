@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("theme");
+    if(!t){ t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Hamed Abdulsalam</title>
+<meta name="description" content="Get in touch about Senior UX Research and Product Design roles, or any of the work on this site.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact · Hamed Abdulsalam">
+<meta property="og:description" content="Get in touch about Senior UX Research and Product Design roles, or any of the work on this site.">
+<meta property="og:url" content="https://hamedabdulsalam.com/contact.html">
+<meta property="og:site_name" content="Hamed Abdulsalam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact · Hamed Abdulsalam">
+<meta name="twitter:description" content="Get in touch about Senior UX Research and Product Design roles, or any of the work on this site.">
+<meta name="theme-color" id="theme-color-meta" content="#FCFAF6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111112'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' fill='%23FFFFFF' text-anchor='middle'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contact">
+<script>window.SITE_ROOT = "./";</script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="site-header"></header>
+
+<main id="main-content">
+  <section class="hero-intro">
+    <div class="shell">
+      <p class="kicker">Contact</p>
+      <h1 class="page-title">Let's talk about the work, or a role.</h1>
+      <p class="lede">Open to UX Research and Product Design roles, remote or relocation, based in the USA 🇺🇸.</p>
+    </div>
+  </section>
+
+  <section class="section-border">
+    <div class="shell">
+      <div class="grid-2 items-start">
+
+        <div>
+          <h2 class="kicker">Direct</h2>
+          <ul class="contact-list">
+            <li><span class="meta-label">Email</span><a href="mailto:hamedleyesalam@gmail.com" class="contact-value">hamedleyesalam@gmail.com</a></li>
+            <li><span class="meta-label">Phone</span><a href="tel:+17654088359" class="contact-value">+1 765 408 8359</a></li>
+            <li><span class="meta-label">Location</span><span class="contact-value">USA 🇺🇸</span></li>
+          </ul>
+          <p class="lede mt-4">Prefer email or the form. I'll get back to you as soon as I can.</p>
+        </div>
+
+        <form id="contact-form" novalidate aria-labelledby="form-heading">
+          <h2 id="form-heading" class="visually-hidden">Send a message</h2>
+          <div class="field" id="field-name">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+            <span class="error" id="name-error" role="alert">Please enter your name.</span>
+          </div>
+          <div class="field" id="field-email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+            <span class="error" id="email-error" role="alert">Please enter a valid email address.</span>
+          </div>
+          <div class="field" id="field-message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+            <span class="error" id="message-error" role="alert">Please enter a message.</span>
+          </div>
+          <button type="submit" class="btn btn-block">Send message</button>
+          <p class="form-status" id="form-status" role="status"></p>
+          <p class="form-hint">This opens a pre-filled email in your mail app. No message is sent from this page directly. To wire up direct submission instead, connect this form to a service such as Formspree or Netlify Forms.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/site.js"></script>
+<script>
+  (function () {
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("form-status");
+    if (!form) return;
+
+    function setError(fieldId, show) {
+      var field = document.getElementById(fieldId);
+      field.classList.toggle("has-error", show);
+      var input = field.querySelector("input,textarea");
+      input.setAttribute("aria-invalid", show ? "true" : "false");
+    }
+
+    function isValidEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("name");
+      var email = document.getElementById("email");
+      var message = document.getElementById("message");
+
+      var nameOk = name.value.trim().length > 0;
+      var emailOk = isValidEmail(email.value.trim());
+      var messageOk = message.value.trim().length > 0;
+
+      setError("field-name", !nameOk);
+      setError("field-email", !emailOk);
+      setError("field-message", !messageOk);
+
+      if (!nameOk || !emailOk || !messageOk) {
+        status.className = "form-status";
+        status.textContent = "";
+        var firstInvalid = !nameOk ? name : (!emailOk ? email : message);
+        firstInvalid.focus();
+        return;
+      }
+
+      var subject = encodeURIComponent("Portfolio contact from " + name.value.trim());
+      var body = encodeURIComponent(message.value.trim() + "\n\nSent by " + name.value.trim() + " (" + email.value.trim() + ")");
+      window.location.href = "mailto:hamedleyesalam@gmail.com?subject=" + subject + "&body=" + body;
+
+      status.className = "form-status show";
+      status.textContent = "Opening your email client with this message pre-filled…";
+    });
+  })();
+</script>
+</body>
+</html>

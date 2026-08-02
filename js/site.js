@@ -9,7 +9,8 @@
     { href: "work.html", label: "Work", page: "work" },
     { href: "approach.html", label: "Approach", page: "approach" },
     { href: "about.html", label: "About", page: "about" },
-    { href: "leadership.html", label: "Leadership", page: "leadership" }
+    { href: "leadership.html", label: "Leadership", page: "leadership" },
+    { href: "contact.html", label: "Contact", page: "contact" }
   ];
 
   function navHTML() {
@@ -50,6 +51,7 @@
             '<li><a href="' + ROOT + 'approach.html">Approach</a></li>' +
             '<li><a href="' + ROOT + 'about.html">About</a></li>' +
             '<li><a href="' + ROOT + 'leadership.html">Leadership</a></li>' +
+            '<li><a href="' + ROOT + 'contact.html">Contact</a></li>' +
             '<li><a href="mailto:hamedleyesalam@gmail.com">Email</a></li>' +
           "</ul>" +
         "</nav>" +
