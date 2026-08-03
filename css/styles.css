@@ -188,10 +188,6 @@ h2.h-section{ font-size:clamp(1.9rem,3.6vw,2.7rem); font-weight:800; max-width:2
   .about-portrait{ justify-self:center; margin:0 auto 20px; max-width:340px; }
 }
 
-.meta-label{ font-size:.82rem; color:var(--ink-faint); display:block; }
-.contact-value{ font-size:1.1rem; }
-.contact-list{ list-style:none; display:flex; flex-direction:column; gap:18px; margin-top:16px; }
-.org-list{ color:var(--ink-soft); line-height:1.8; }
 .method-list{ margin-top:32px; max-width:760px; }
 .plain-card.divider{ margin-top:48px; padding-top:32px; border-top:1px solid var(--line); }
 
@@ -742,24 +738,6 @@ blockquote.pull{
 blockquote.pull cite{ display:block; margin-top:14px; font-family:var(--font-body); font-style:normal; font-size:.85rem; color:var(--ink-faint); }
 
 .next-cs{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:36px 0 0; flex-wrap:wrap; }
-
-/* =========================================================
-   Forms (contact)
-   ========================================================= */
-.field{ display:flex; flex-direction:column; gap:8px; margin-bottom:24px; }
-.field label{ font-size:.9rem; font-weight:650; color:var(--ink); }
-.field input, .field textarea{
-  font-family:var(--font-body); font-size:1rem; padding:13px 14px; border:1px solid var(--line-strong);
-  border-radius:var(--radius); background:var(--paper); color:var(--ink); min-height:48px;
-}
-.field textarea{ min-height:150px; resize:vertical; }
-.field input:focus, .field textarea:focus{ border-color:var(--ink); }
-.field.has-error input, .field.has-error textarea{ border-color:#B3261E; }
-.field .error{ font-size:.84rem; color:#B3261E; display:none; }
-.field.has-error .error{ display:block; }
-.form-status{ font-size:.92rem; padding:0; margin-top:14px; display:none; color:var(--ink-soft); }
-.form-status.show{ display:block; }
-.form-hint{ font-size:.85rem; color:var(--ink-faint); margin-top:16px; }
 
 /* =========================================================
    Resume page / print
