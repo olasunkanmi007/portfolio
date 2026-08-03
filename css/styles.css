@@ -240,8 +240,8 @@ a.plain:hover{ color:var(--accent); }
 .scroll-panel::after{ bottom:-8px; transform:rotate(180deg); }
 .scroll-panel .prose{ max-width:68ch; }
 .scroll-panel .prose p{
-  font-family:"Tangerine", cursive; font-weight:700; color:#3d2b14;
-  font-size:clamp(1.7rem,2.6vw,2.15rem); line-height:1.28; letter-spacing:.01em;
+  font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif; font-weight:400; color:#3d2b14;
+  font-size:clamp(1.05rem,1.6vw,1.25rem); line-height:1.55; letter-spacing:0;
 }
 .scroll-panel .prose p + p{ margin-top:8px; }
 
