@@ -225,7 +225,9 @@
     }
     function setActive(i) {
       slides.forEach(function (slide, idx) {
-        slide.setAttribute("aria-hidden", idx === i ? "false" : "true");
+        var active = idx === i;
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+        slide.classList.toggle("is-active", active);
         var img = slide.querySelector("img");
         if (img) img.tabIndex = -1;
       });
@@ -243,7 +245,6 @@
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function show(i) {
-      track.style.transform = "translateY(-" + i * 100 + "%)";
       setLabel(i);
       setActive(i);
     }
