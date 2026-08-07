@@ -524,12 +524,12 @@ a.plain:hover{ color:var(--accent); }
 .hero-visual-toggle.is-paused .icon-play{ display:block; }
 
 /* Callout tag: label + leader line pointing at the card's top-right corner. */
-.hero-tag{ position:absolute; top:-64px; right:0; z-index:3; text-align:right; pointer-events:none; }
+.hero-tag{ position:absolute; top:-64px; right:0; z-index:3; pointer-events:none; display:flex; flex-direction:column; align-items:flex-end; }
 .hero-tag-label{
-  display:inline-block; font-family:var(--font-body); font-weight:800; font-size:.76rem;
+  font-family:var(--font-body); font-weight:800; font-size:.76rem;
   letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);
 }
-.hero-tag-line{ position:relative; display:block; width:1.5px; height:26px; background:var(--line-strong); margin:8px 0 0 auto; }
+.hero-tag-line{ position:relative; display:block; width:1.5px; height:26px; background:var(--line-strong); margin-top:8px; }
 .hero-tag-dot{
   position:absolute; bottom:-5px; left:50%; transform:translateX(-50%);
   width:9px; height:9px; border-radius:50%; background:var(--paper); border:2px solid var(--accent);
