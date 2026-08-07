@@ -407,7 +407,7 @@ a.plain:hover{ color:var(--accent); }
 .hero-watermark{
   position:absolute; z-index:0; bottom:-.12em; left:-.04em; right:0; text-align:center;
   margin:0; font-family:"Tangerine",cursive; font-weight:700; font-size:clamp(6rem,13vw,9.5rem);
-  line-height:1; color:var(--ink); opacity:.07; white-space:nowrap; pointer-events:none; user-select:none;
+  line-height:1; color:var(--ink); opacity:.04; white-space:nowrap; pointer-events:none; user-select:none;
 }
 .hero-main > *:not(.hero-watermark){ position:relative; z-index:1; }
 @media (max-width:900px){ .hero-watermark{ display:none; } }
