@@ -41,6 +41,10 @@
                   "<span>High contrast</span>" +
                   '<span class="a11y-switch"><input type="checkbox" id="a11y-contrast-toggle"><span class="a11y-switch-track" aria-hidden="true"></span></span>' +
                 "</label>" +
+                '<label class="a11y-row a11y-switch-row">' +
+                  "<span>Dyslexia-friendly spacing</span>" +
+                  '<span class="a11y-switch"><input type="checkbox" id="a11y-dyslexic-toggle"><span class="a11y-switch-track" aria-hidden="true"></span></span>' +
+                "</label>" +
               "</div>" +
             "</div>" +
             '<button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">' +
@@ -167,6 +171,7 @@
     var panel = document.getElementById("a11y-panel");
     var sizeBtns = panel ? panel.querySelectorAll(".a11y-size-btn") : [];
     var contrastCheckbox = document.getElementById("a11y-contrast-toggle");
+    var dyslexicCheckbox = document.getElementById("a11y-dyslexic-toggle");
     if (!toggle || !panel) return;
 
     function applyTextSize(size) {
@@ -184,20 +189,33 @@
       if (contrastCheckbox) contrastCheckbox.checked = on;
     }
 
+    function applyDyslexic(on) {
+      if (on) document.documentElement.setAttribute("data-dyslexic", "on");
+      else document.documentElement.removeAttribute("data-dyslexic");
+      try { localStorage.setItem("dyslexic", on ? "on" : ""); } catch (e) {}
+      if (dyslexicCheckbox) dyslexicCheckbox.checked = on;
+    }
+
     var storedSize = "md";
     var storedContrast = false;
+    var storedDyslexic = false;
     try {
       storedSize = localStorage.getItem("textSize") || "md";
       storedContrast = localStorage.getItem("contrast") === "high";
+      storedDyslexic = localStorage.getItem("dyslexic") === "on";
     } catch (e) {}
     applyTextSize(storedSize);
     applyContrast(storedContrast);
+    applyDyslexic(storedDyslexic);
 
     sizeBtns.forEach(function (btn) {
       btn.addEventListener("click", function () { applyTextSize(btn.getAttribute("data-size")); });
     });
     if (contrastCheckbox) {
       contrastCheckbox.addEventListener("change", function () { applyContrast(contrastCheckbox.checked); });
+    }
+    if (dyslexicCheckbox) {
+      dyslexicCheckbox.addEventListener("change", function () { applyDyslexic(dyslexicCheckbox.checked); });
     }
 
     function closePanel() {

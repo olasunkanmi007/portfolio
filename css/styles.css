@@ -115,6 +115,13 @@ body{
 }
 :root[data-contrast="high"] .hero-watermark,
 :root[data-contrast="high"] body::before{ display:none; }
+/* Dyslexia-friendly spacing: wider line-height, letter-spacing and paragraph gaps,
+   plus left-aligned body text (ragged-right reads easier than centered or justified). */
+:root[data-dyslexic="on"] body{ line-height:2; letter-spacing:.01em; }
+:root[data-dyslexic="on"] .prose p{ line-height:1.9; }
+:root[data-dyslexic="on"] .prose p + p{ margin-top:28px; }
+:root[data-dyslexic="on"] .scroll-panel .prose p{ text-align:left; line-height:1.9; }
+:root[data-dyslexic="on"] .scroll-panel .prose p + p{ margin-top:22px; }
 /* Subtle fixed paper-grain texture, sits over everything at very low opacity
    via mix-blend-mode so it reads as texture, not a layer competing for attention. */
 body::before{
