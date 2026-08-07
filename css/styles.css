@@ -99,8 +99,22 @@
 html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 body{
   margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body);
-  font-size:18px; line-height:1.7; -webkit-font-smoothing:antialiased;
+  font-size:1.125rem; line-height:1.7; -webkit-font-smoothing:antialiased;
 }
+/* Reading preferences: text size scales the rem root so headings, spacing and body
+   text all grow together; high contrast overrides the theme's ink/line/paper tokens. */
+:root[data-text-size="lg"]{ font-size:112.5%; }
+:root[data-text-size="xl"]{ font-size:125%; }
+:root[data-contrast="high"]{
+  --ink:#000; --ink-soft:#000; --ink-faint:#000; --paper:#fff; --paper-2:#fff;
+  --line:#000; --line-strong:#000;
+}
+:root[data-theme="dark"][data-contrast="high"]{
+  --ink:#fff; --ink-soft:#fff; --ink-faint:#fff; --paper:#000; --paper-2:#000;
+  --line:#fff; --line-strong:#fff;
+}
+:root[data-contrast="high"] .hero-watermark,
+:root[data-contrast="high"] body::before{ display:none; }
 /* Subtle fixed paper-grain texture, sits over everything at very low opacity
    via mix-blend-mode so it reads as texture, not a layer competing for attention. */
 body::before{
@@ -370,6 +384,53 @@ a.plain:hover{ color:var(--accent); }
 :root[data-theme="dark"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon{ display:none; }
 
+/* ---------- Reading preferences (text size + contrast) ---------- */
+.a11y-control{ position:relative; }
+.a11y-toggle{
+  background:transparent; border:1px solid var(--line-strong); border-radius:50%; width:42px; height:42px;
+  display:inline-flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink); padding:0;
+  flex:none; font-family:var(--font-body); font-weight:700; font-size:.85rem;
+}
+.a11y-toggle:hover{ border-color:var(--ink); }
+.a11y-toggle[aria-expanded="true"]{ border-color:var(--ink); background:var(--paper-2); }
+.a11y-panel{
+  position:absolute; top:calc(100% + 10px); right:0; z-index:20; width:240px;
+  background:var(--paper); border:1px solid var(--line-strong); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow); padding:18px;
+}
+.a11y-panel-title{
+  font-family:var(--font-body); font-weight:700; font-size:.8rem; letter-spacing:.02em;
+  color:var(--ink-faint); margin:0 0 14px;
+}
+.a11y-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.a11y-row + .a11y-row{ margin-top:16px; }
+.a11y-row span:first-child{ font-size:.92rem; color:var(--ink); }
+.a11y-size-steps{ display:flex; gap:6px; }
+.a11y-size-btn{
+  background:transparent; border:1px solid var(--line-strong); border-radius:var(--radius); cursor:pointer;
+  color:var(--ink); width:30px; height:30px; font-family:var(--font-body); font-weight:700; line-height:1;
+}
+.a11y-size-btn:nth-child(1){ font-size:.8rem; }
+.a11y-size-btn:nth-child(2){ font-size:1rem; }
+.a11y-size-btn:nth-child(3){ font-size:1.2rem; }
+.a11y-size-btn:hover{ border-color:var(--ink); }
+.a11y-size-btn[aria-pressed="true"]{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.a11y-switch-row{ cursor:pointer; }
+.a11y-switch{ position:relative; display:inline-block; width:36px; height:20px; flex:none; }
+.a11y-switch input{ position:absolute; inset:0; opacity:0; margin:0; cursor:pointer; }
+.a11y-switch-track{
+  position:absolute; inset:0; background:var(--line-strong); border-radius:var(--radius-pill);
+  transition:background .15s ease;
+}
+.a11y-switch-track::before{
+  content:""; position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%;
+  background:var(--paper); transition:transform .15s ease;
+}
+.a11y-switch input:checked + .a11y-switch-track{ background:var(--accent); }
+.a11y-switch input:checked + .a11y-switch-track::before{ transform:translateX(16px); }
+.a11y-switch input:focus-visible + .a11y-switch-track{ outline:2px solid var(--accent); outline-offset:2px; }
+@media (prefers-reduced-motion:reduce){ .a11y-switch-track, .a11y-switch-track::before{ transition:none; } }
+
 @media (max-width:840px){
   .nav-links{
     position:fixed; inset:78px 0 0 0; background:var(--paper); flex-direction:column; align-items:flex-start;
@@ -380,6 +441,11 @@ a.plain:hover{ color:var(--accent); }
   .nav-links a{ display:block; padding:16px 0; border-bottom:1px solid var(--line); width:100%; font-size:1.15rem; }
   .nav-toggle{ display:inline-flex; }
   .nav-actions .link-arrow{ display:none; }
+  .nav-actions{ gap:10px; }
+}
+@media (max-width:480px){
+  .nav-toggle-label{ display:none; }
+  .a11y-toggle, .theme-toggle{ width:38px; height:38px; }
 }
 @media (prefers-reduced-motion:reduce){ .nav-links{ transition:none; } }
 

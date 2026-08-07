@@ -25,6 +25,24 @@
           '<ul class="nav-links" id="nav-links">' + links + "</ul>" +
           '<div class="nav-actions">' +
             '<a class="link-arrow" href="mailto:hamedleyesalam@gmail.com">Let\'s Connect! <span class="a" aria-hidden="true">→</span></a>' +
+            '<div class="a11y-control">' +
+              '<button class="a11y-toggle" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel" aria-label="Reading preferences: text size and contrast">Aa</button>' +
+              '<div class="a11y-panel" id="a11y-panel" role="group" aria-label="Reading preferences" hidden>' +
+                '<p class="a11y-panel-title">Reading preferences</p>' +
+                '<div class="a11y-row">' +
+                  '<span>Text size</span>' +
+                  '<div class="a11y-size-steps" role="group" aria-label="Text size">' +
+                    '<button type="button" class="a11y-size-btn" data-size="md" aria-label="Default text size">A</button>' +
+                    '<button type="button" class="a11y-size-btn" data-size="lg" aria-label="Large text size">A</button>' +
+                    '<button type="button" class="a11y-size-btn" data-size="xl" aria-label="Largest text size">A</button>' +
+                  "</div>" +
+                "</div>" +
+                '<label class="a11y-row a11y-switch-row">' +
+                  "<span>High contrast</span>" +
+                  '<span class="a11y-switch"><input type="checkbox" id="a11y-contrast-toggle"><span class="a11y-switch-track" aria-hidden="true"></span></span>' +
+                "</label>" +
+              "</div>" +
+            "</div>" +
             '<button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">' +
               '<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>' +
               '<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>' +
@@ -141,6 +159,66 @@
     setTheme(currentTheme());
     btn.addEventListener("click", function () {
       setTheme(currentTheme() === "dark" ? "light" : "dark");
+    });
+  }
+
+  function wireA11yPanel() {
+    var toggle = document.getElementById("a11y-toggle");
+    var panel = document.getElementById("a11y-panel");
+    var sizeBtns = panel ? panel.querySelectorAll(".a11y-size-btn") : [];
+    var contrastCheckbox = document.getElementById("a11y-contrast-toggle");
+    if (!toggle || !panel) return;
+
+    function applyTextSize(size) {
+      document.documentElement.setAttribute("data-text-size", size);
+      try { localStorage.setItem("textSize", size); } catch (e) {}
+      sizeBtns.forEach(function (btn) {
+        btn.setAttribute("aria-pressed", btn.getAttribute("data-size") === size ? "true" : "false");
+      });
+    }
+
+    function applyContrast(on) {
+      if (on) document.documentElement.setAttribute("data-contrast", "high");
+      else document.documentElement.removeAttribute("data-contrast");
+      try { localStorage.setItem("contrast", on ? "high" : ""); } catch (e) {}
+      if (contrastCheckbox) contrastCheckbox.checked = on;
+    }
+
+    var storedSize = "md";
+    var storedContrast = false;
+    try {
+      storedSize = localStorage.getItem("textSize") || "md";
+      storedContrast = localStorage.getItem("contrast") === "high";
+    } catch (e) {}
+    applyTextSize(storedSize);
+    applyContrast(storedContrast);
+
+    sizeBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () { applyTextSize(btn.getAttribute("data-size")); });
+    });
+    if (contrastCheckbox) {
+      contrastCheckbox.addEventListener("change", function () { applyContrast(contrastCheckbox.checked); });
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+    function openPanel() {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+    toggle.addEventListener("click", function () {
+      panel.hidden ? openPanel() : closePanel();
+    });
+    document.addEventListener("click", function (e) {
+      if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle) closePanel();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) {
+        closePanel();
+        toggle.focus();
+      }
     });
   }
 
@@ -446,6 +524,7 @@
     mountLetterButton();
     wireMobileMenu();
     wireThemeToggle();
+    wireA11yPanel();
     wireHeaderShadow();
     wireScrollspy();
     wireHeroVisual();
